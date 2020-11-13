@@ -7,17 +7,17 @@
     </head>
     <body>
     <div id="bg">
-     <!--<img src="images/rop_logo.png" id="bgimg" alt=""> -->
+     <img src="images/rop_logo.png" id="bgimg" alt="">
     </div>
-    <div id="menu">
-        <div class="slider_size">
+    <div id="menu" class="menu">
+        <div class="slider_container">
             <input type="range" min="50" max="200" value="100" class="slider" id="circle_size">
-            <p>Rozmiar kółka: <span id="size"></span></p>
         </div>
-        <div class="slide_time">
+        <p>Circle size: <span id="size"></span></p>
+        <div class="slider_container">
             <input type="range" min="1" max="6" value="3" class="slider" id="time">
-            <p>Czas na kliknięcie: <span id="timeout"></span></p>
         </div>
+        <p>Time for click: <span id="timeout"></span></p>
 
     </div>
     <script src="javascript/menu.js"></script>

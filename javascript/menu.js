@@ -15,3 +15,9 @@ time_output.innerHTML = time.value + "s";
 time.oninput = function() {
     time_output.innerHTML = this.value + "s";
 };
+
+// * chowanie loga
+setTimeout(function(){
+  document.getElementById('bg').style.visibility = "hidden";
+  document.getElementById('menu').style.visibility = "visible";
+},5000);

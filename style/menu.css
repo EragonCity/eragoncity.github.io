@@ -1,5 +1,10 @@
+@font-face{ 
+	font-family: 'Brushield';	
+	src: url('../fonts/Brushield.otf') format('opentype'),	     
+}
+
 body {
-    background-color: #ffffff;
+    background-color: #000000;
 }
 
 #bg {
@@ -19,13 +24,15 @@ body {
     margin: auto; 
     min-width: 50%;
     min-height: 50%;
+    transition-duration: 0.1s;
 }
 
 .slider {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
-    width: 20%; /* Full-width */
-    height: 25px; /* Specified height */
+    width: 100%; /* Full-width */
+    height: 15px; /* Specified height */
+    border-radius: 5px;
     background: #d3d3d3; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -43,7 +50,8 @@ body {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
+    height: 25px;
+    border-radius: 50%; /* Slider handle height */
     background: hotpink; /* hotpink background */
     cursor: pointer; /* Cursor on hover */
 }
@@ -51,6 +59,25 @@ body {
 .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
+    border-radius: 50%;
     background: hotpink; /* hotpink background */
     cursor: pointer; /* Cursor on hover */
+}
+
+#menu {
+    visibility: hidden;
+    transition-duration: 0.2s
+};
+
+#menu p {
+    color: #ffffff;
+    font-family: Brushield;
+    font-size: x-large;
+    text-align: center;
+    visibility: visible;
+}
+
+.slider_container {
+    width: 500px;
+    margin: 0 auto;
 }

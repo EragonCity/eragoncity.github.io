@@ -10,15 +10,17 @@
      <img src="images/rop_logo.png" id="bgimg" alt="">
     </div>
     <div id="menu" class="menu">
+        <img src="images/rop.png">
         <div class="slider_container">
             <input type="range" min="50" max="200" value="100" class="slider" id="circle_size">
-        </div>
-        <p>Circle size: <span id="size"></span></p>
-        <div class="slider_container">
+            <p class="info">Circle size: <span id="size"></span></p>
             <input type="range" min="1" max="6" value="3" class="slider" id="time">
+            <div>
+                <button class="start" onclick="startGame()">START!</button>
+            </div>
+            <p class="info">Time for click: <span id="timeout"></span></p>
         </div>
-        <p>Time for click: <span id="timeout"></span></p>
-
+        
     </div>
     <script src="javascript/menu.js"></script>
     </body>

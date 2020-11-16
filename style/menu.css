@@ -66,7 +66,8 @@ body {
 
 #menu {
     visibility: hidden;
-    transition-duration: 0.2s
+    transition-duration: 0.2s;
+    text-align: center;
 };
 
 #menu p {
@@ -81,3 +82,24 @@ body {
     width: 500px;
     margin: 0 auto;
 }
+
+button.start {
+    background: #000000;
+    border: #ffffff 3px solid;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.5s;
+    margin-top: 20px;
+}
+
+button.start:hover {
+    background-color: #ffffff;
+    color: black;
+    font-size: 20px;
+}
+

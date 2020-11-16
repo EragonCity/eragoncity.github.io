@@ -21,3 +21,7 @@ setTimeout(function(){
   document.getElementById('bg').style.visibility = "hidden";
   document.getElementById('menu').style.visibility = "visible";
 },5000);
+
+function startGame() {
+  location.href("game.html")
+};

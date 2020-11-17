@@ -18,8 +18,9 @@ time.oninput = function() {
 
 // * chowanie loga
 setTimeout(function(){
+  document.getElementById('bg').style.opacity = 0;
   document.getElementById('bg').style.visibility = "hidden";
-  document.getElementById('menu').style.visibility = "visible";
+  document.getElementById('menu').style.opacity = 1.0;
 },5000);
 
 function startGame() {

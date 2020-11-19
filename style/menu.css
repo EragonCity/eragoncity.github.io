@@ -72,6 +72,14 @@ body {
     transition: opacity 3s;
 }
 
+div.menu {
+    margin-top: 150px;
+}
+
+#menu img {
+    margin-bottom: 30px;
+}
+
 p {
     color: #ffffff;
     font-family: Brushield;

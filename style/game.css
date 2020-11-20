@@ -1,0 +1,45 @@
+@font-face{ 
+	font-family: 'Brushield';	
+	src: url('../fonts/Brushield.otf') format('opentype'),	     
+}
+
+body {
+    background-color: #000000;
+}
+
+div#position {
+    display: inline-block;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+    left: 300px;
+}
+
+
+button#button {
+    display: inline-block;
+    background-color: rgba(255, 255, 0, 0.8);
+    border: red solid 10px;
+    border-radius: 500px;
+    padding: 20px;
+    outline: none;
+}
+
+button.back {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border: white solid 2px;
+}
+
+.back::before {
+    content: 'x';
+    color: #ffffff;
+    font-size: 30px;
+    font-family: "Brushield";
+}
+
+p {
+    color: #ffffff;
+}

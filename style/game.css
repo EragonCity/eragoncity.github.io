@@ -43,3 +43,11 @@ button.back {
 p {
     color: #ffffff;
 }
+
+div#playarea {
+    position: absolute;
+    border: 5px solid white;
+    display: inline-block;
+    top: 50px;
+    left: 50px;
+}

@@ -23,6 +23,7 @@ button#button {
     border-radius: 500px;
     padding: 20px;
     outline: none;
+    cursor: pointer;
 }
 
 button.back {
@@ -30,23 +31,33 @@ button.back {
     width: 40px;
     height: 40px;
     background-color: black;
-    border: white solid 2px;
+    border: white solid 3px;
 }
 
 .back::before {
     content: 'x';
     color: #ffffff;
     font-size: 30px;
-    font-family: "Brushield";
+}
+
+p#score {
+    color: #ffffff;
+    font-family: 'Brushield';
+    position: fixed;
+    top: -35px;
+    right: 0;
+    font-size: 40px;
 }
 
 p {
     color: #ffffff;
+    font-family: 'Brushield';
+    font-size: 40px;
 }
 
 div#playarea {
     position: absolute;
-    border: 5px solid white;
+    border: 3px solid white;
     display: inline-block;
     top: 50px;
     left: 50px;

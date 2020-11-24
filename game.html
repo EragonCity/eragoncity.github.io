@@ -8,12 +8,13 @@
     </head>
     <body>
         <div id="playarea">
+            <button id="missarea" onclick="addScore (-50)" onclick="click()"></button>
             <div id="position">
-                <button id="button" onclick="click ()"></button>
+                <button id="button" onclick="addScore (100)" onclick="miss()"></button>
             </div>
         </div>
         <button onclick="menu ()" class="back"></button>
-        <p id="score">0000000000000</p>
+        <p id="score">0000000000</p>
         <!--<p id="debug">zjebałeś local storage</p>-->
         <p id="wh"></p>
         <script src="javascript/game.js"></script>

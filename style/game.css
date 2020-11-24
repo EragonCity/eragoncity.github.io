@@ -17,13 +17,19 @@ div#position {
 
 
 button#button {
+    position: sticky;
     display: inline-block;
-    background-color: rgba(255, 255, 0, 0.8);
-    border: red solid 10px;
+    background-color: rgba(255, 33, 144, 1);
+    border: white solid 10px;
     border-radius: 500px;
     padding: 20px;
     outline: none;
     cursor: pointer;
+    z-index: 10000;
+}
+
+button#missarea {
+    opacity: 0;
 }
 
 button.back {

@@ -31,5 +31,5 @@ function startGame() {
 };
 
 setInterval (() => {
-  document.getElementById('wh').innerHTML = `Debug<br>Width: ${windo.innerWidth}<br>Height: ${window.innerHeight}`;
+  document.getElementById('wh').innerHTML = `Debug<br>Width: ${window.innerWidth}<br>Height: ${window.innerHeight}`;
 }, 0);

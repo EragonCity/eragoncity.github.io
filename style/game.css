@@ -17,7 +17,6 @@ div#position {
 
 
 button#button {
-    position: sticky;
     display: inline-block;
     background-color: rgba(255, 33, 144, 1);
     border: white solid 10px;
@@ -62,9 +61,13 @@ p {
 }
 
 div#playarea {
-    position: absolute;
+    position: fixed;
     border: 3px solid white;
     display: inline-block;
     top: 50px;
     left: 50px;
+}
+
+button#missarea {
+    position: absolute;
 }

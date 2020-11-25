@@ -26,9 +26,9 @@ setInterval (() => {
     var wHcalculation = window.innerHeight - 150;
     document.getElementById('playarea').style.width = `${wWcalculation}px`;
     document.getElementById('playarea').style.height = `${wHcalculation}px`;
-    document.getElementById('missarea').style.width = `${wWcalculation}px`
-    document.getElementById('missarea').style.height = `${wHcalculation}px`
-    document.getElementById('button').style.borderWidth = `${size/5}px`
+    document.getElementById('missarea').style.width = `${wWcalculation}px`;
+    document.getElementById('missarea').style.height = `${wHcalculation}px`;
+    document.getElementById('button').style.borderWidth = `${size/5}px`;
     //*debug
     //!document.getElementById('wh').innerHTML = `Debug<br>Width: ${window.innerWidth}<br>Height: ${window.innerHeight}`;
 }, 0);
@@ -51,17 +51,29 @@ function randomPos() {
 
 //*score counting
 var scoreVar = 0;
-function addScore(score) {
-    scoreVar += score;
-    const zeroPad = (num, places) => String(num).padStart(places, '0')
-    document.getElementById("score").innerHTML = zeroPad(scoreVar, 10);
+var comboVar = 0;
+var notclick = setInterval(miss, time);
+function addScore() {
+    scoreVar += 100*comboVar;
+    comboVar += 1;
     randomPos();
-};
-
-function click() {
     hitsound.play();
+    clearInterval(notclick);
+    notclick = setInterval(miss, time);
+};
+function miss() {
+    scoreVar -= 50;
+    misssound.play();
+    comboVar = 0;
 };
 
-function miss () {
-    misssound.play();
-};
+setInterval (() => {
+    const zeroPad = (num, places) => String(num).padStart(places, '0')
+    if (scoreVar >= 0) {
+        document.getElementById("score").innerHTML = zeroPad(scoreVar, 10);
+    } else if (scoreVar < 0) {
+        var scoreVarAbs = Math.abs(scoreVar);
+        document.getElementById("score").innerHTML = `-${zeroPad(scoreVarAbs, 10)}`;
+    };
+    document.getElementById("combocounter").innerHTML = `x${comboVar}`
+}, 0);

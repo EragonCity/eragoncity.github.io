@@ -1,0 +1,27 @@
+@font-face{ 
+	font-family: 'Brushield';	
+	src: url('../fonts/Brushield.otf') format('opentype'),	     
+}
+
+body {
+    background-color: #000000;
+}
+
+p {
+    color: #fff;
+    font-family: "Brushield";
+    font-size: 50px;
+    margin: 0px;
+}
+
+.gameover {
+    font-size: 200px;
+}
+
+div#center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}

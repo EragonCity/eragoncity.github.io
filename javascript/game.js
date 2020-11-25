@@ -70,7 +70,6 @@ function miss() {
     comboVar = 0;
     misscount++;
 };
-
 setInterval (() => {
     const zeroPad = (num, places) => String(num).padStart(places, '0')
     if (scoreVar >= 0) {
@@ -81,4 +80,28 @@ setInterval (() => {
     };
     document.getElementById("combocounter").innerHTML = `x${comboVar}`
     document.getElementById("missleft").innerHTML = `Left Misses: ${msc-misscount}`
+}, 0);
+
+//* game over
+function gameOver() {
+    document.location.href = "gameover.html";
+};
+
+setInterval (() => {
+    if (misscount > msc) {
+        gameOver();
+    };
+},0);
+
+//* score and time output
+var totalSeconds = 0;
+setInterval(setTime, 1000);
+
+function setTime() {
+    ++totalSeconds;
+};
+//* local storage output
+setInterval (() => {
+    localStorage.setItem("scoreLocalStorage", scoreVar);
+    localStorage.setItem("secondsLocalStorage", totalSeconds);
 }, 0);

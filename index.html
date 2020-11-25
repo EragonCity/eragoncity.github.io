@@ -12,11 +12,14 @@
     </div>
     <div id="menu" class="menu">
         <img src="images/rop.png">
+        <h1>Click the circles</h1>
         <div class="slider_container">
             <input type="range" min="20" max="100" value="60" class="slider" id="circle_size">
             <p class="info">Circle size: <span id="size"></span></p>
             <input type="range" min="200" max="4000" value="2000" class="slider" id="time">
             <p class="info">Time for click: <span id="timeout"></span></p>
+            <input type="range" min="10" max="100" value="40" class="slider" id="msc">
+            <p class="info">Chances: <span id="msco"></span></p>
             <label class="switch">
                 <input type="checkbox">
                 <span class="slideron round"></span>
@@ -28,10 +31,10 @@
         </div>
         
     </div>
-    <!--*debug-->
+    <!--*debug
     <div>
         <p id="wh"></p>
-    </div>
+    </div>-->
     <script src="javascript/menu.js"></script>
     </body>
 </html>

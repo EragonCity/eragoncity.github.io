@@ -32,6 +32,8 @@ button#missarea {
 }
 
 button.back {
+    color: white;
+    font-family: 'Brushield';
     display: inline-block;
     width: 40px;
     height: 40px;
@@ -41,23 +43,8 @@ button.back {
 
 .back::before {
     content: 'x';
-    color: #ffffff;
+    
     font-size: 30px;
-}
-
-p#score {
-    color: #ffffff;
-    font-family: 'Brushield';
-    position: fixed;
-    top: -35px;
-    right: 0;
-    font-size: 40px;
-}
-
-p {
-    color: #ffffff;
-    font-family: 'Brushield';
-    font-size: 40px;
 }
 
 div#playarea {
@@ -70,4 +57,28 @@ div#playarea {
 
 button#missarea {
     position: absolute;
+}
+
+p {
+    color: #ffffff;
+    font-family: 'Brushield';
+    font-size: 40px;
+}
+
+p#score {
+    position: fixed;
+    top: -35px;
+    right: 0;  
+}
+
+p#combocounter {
+    position: fixed;
+    bottom: -35px;
+    left: 20px;
+}
+
+p#missleft {
+    position: fixed;
+    bottom: -35px;
+    right: 20px;
 }

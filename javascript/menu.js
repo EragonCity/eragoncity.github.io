@@ -6,7 +6,7 @@ var circle_size_output = document.getElementById("size");
 setInterval (function() {
   circle_size_output.innerHTML = circle_size.value + "px";
   localStorage.setItem("circle_sizeLocalStorage", circle_size.value);
-},1);
+},0);
 
 // * Czas na kliknięcie
 var time = document.getElementById("time");
@@ -18,6 +18,14 @@ setInterval(() => {
   localStorage.setItem("timeLocalStorage", time.value);
 }, 0);
 
+// * dopuszzczalne missy
+var chances = document.getElementById("msc");
+var chances_output = document.getElementById("msco");
+
+setInterval (function() {
+  chances_output.innerHTML = chances.value;
+  localStorage.setItem("mscLocalStorage", chances.value);
+},0);
 
 // * chowanie loga
 setTimeout(function(){
@@ -29,7 +37,7 @@ setTimeout(function(){
 function startGame() {
   document.location.href = "game.html";
 };
-
+/* ! debug 
 setInterval (() => {
   document.getElementById('wh').innerHTML = `Debug<br>Width: ${window.innerWidth}<br>Height: ${window.innerHeight}`;
-}, 0);
+}, 0); */

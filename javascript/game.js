@@ -5,10 +5,12 @@ var misssound = new Audio('sounds/combobreak.wav');
 //*local storage
 var time_get = localStorage.getItem("timeLocalStorage");
 var size_get = localStorage.getItem("circle_sizeLocalStorage");
+var msc_get = localStorage.getItem("mscLocalStorage")
 
 //* string => number conversion
 var time = Number(time_get);
 var size = Number(size_get)/2;
+var msc = Number(msc_get);
 
 //*debug
 //!document.getElementById("debug").innerHTML = `${time}ms<br>${size}px`;
@@ -53,9 +55,10 @@ function randomPos() {
 var scoreVar = 0;
 var comboVar = 0;
 var notclick = setInterval(miss, time);
+var misscount = 0;
 function addScore() {
     scoreVar += 100*comboVar;
-    comboVar += 1;
+    comboVar++;
     randomPos();
     hitsound.play();
     clearInterval(notclick);
@@ -65,6 +68,7 @@ function miss() {
     scoreVar -= 50;
     misssound.play();
     comboVar = 0;
+    misscount++;
 };
 
 setInterval (() => {
@@ -76,4 +80,5 @@ setInterval (() => {
         document.getElementById("score").innerHTML = `-${zeroPad(scoreVarAbs, 10)}`;
     };
     document.getElementById("combocounter").innerHTML = `x${comboVar}`
+    document.getElementById("missleft").innerHTML = `Left Misses: ${msc-misscount}`
 }, 0);

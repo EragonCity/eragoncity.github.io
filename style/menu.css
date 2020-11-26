@@ -1,6 +1,6 @@
 @font-face{ 
 	font-family: 'Brushield';	
-	src: url('../fonts/Brushield.otf') format('opentype'),	     
+	src: url('../fonts/Brushield.woff') format('woff'),	     
 }
 
 body {

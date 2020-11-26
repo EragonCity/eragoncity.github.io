@@ -27,6 +27,12 @@ setInterval (function() {
   localStorage.setItem("mscLocalStorage", chances.value);
 },0);
 
+//* check box check
+setInterval(() =>{
+  var rndEvent = checkbox.checked;
+  localStorage.setItem("rndEventLocalStorage", rndEvent)
+  // ! document.getElementById("wh").innerHTML = rndEvent;
+},0 );
 // * chowanie loga
 setTimeout(function(){
   document.getElementById('bg').style.opacity = 0;

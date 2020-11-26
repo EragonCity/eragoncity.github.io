@@ -5,12 +5,13 @@ var misssound = new Audio('sounds/combobreak.wav');
 //*local storage
 var time_get = localStorage.getItem("timeLocalStorage");
 var size_get = localStorage.getItem("circle_sizeLocalStorage");
-var msc_get = localStorage.getItem("mscLocalStorage")
+var msc_get = localStorage.getItem("mscLocalStorage");
 
 //* string => number conversion
 var time = Number(time_get);
 var size = Number(size_get)/2;
 var msc = Number(msc_get);
+var time_set = time;
 
 //*debug
 //!document.getElementById("debug").innerHTML = `${time}ms<br>${size}px`;
@@ -18,6 +19,44 @@ var msc = Number(msc_get);
 //! back button
 function menu () {
     document.location.href = "index.html";
+};
+
+//* random events
+var rnd = localStorage.getItem("rndEventLocalStorage");
+function rndD() {
+    if (rnd = true) {
+        setInterval(randomEvent,10000);
+    };
+};
+rndD();
+// ! document.getElementById("wh").innerHTML = rnd;
+function randomEvent() {
+    switch (Math.ceil(Math.random()*10)) {
+        case 1:    
+        case 2:    
+        case 3:  
+        case 4:
+            document.getElementById("button").style.borderRadius = "0px";
+            setTimeout(circle,5000);
+            break;
+        case 5:
+        case 6:
+            time = 200;
+            setTimeout(time_normal, 2000);
+            break;
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+        default:
+            console.log("default");
+    };
+};
+function circle() {
+    document.getElementById("button").style.borderRadius = "500px";
+};
+function time_normal() {
+    time = time_set;
 };
 
 //* size apply
@@ -56,6 +95,8 @@ var scoreVar = 0;
 var comboVar = 0;
 var notclick = setInterval(miss, time);
 var misscount = 0;
+var maxcombo = 0;
+
 function addScore() {
     scoreVar += 100*comboVar;
     comboVar++;
@@ -64,22 +105,32 @@ function addScore() {
     clearInterval(notclick);
     notclick = setInterval(miss, time);
 };
+// * miss function
 function miss() {
     scoreVar -= 50;
     misssound.play();
     comboVar = 0;
+    randomPos();
     misscount++;
 };
+// *constatant function for other calculations
 setInterval (() => {
     const zeroPad = (num, places) => String(num).padStart(places, '0')
+    //*score padding and display
     if (scoreVar >= 0) {
         document.getElementById("score").innerHTML = zeroPad(scoreVar, 10);
     } else if (scoreVar < 0) {
         var scoreVarAbs = Math.abs(scoreVar);
         document.getElementById("score").innerHTML = `-${zeroPad(scoreVarAbs, 10)}`;
     };
-    document.getElementById("combocounter").innerHTML = `x${comboVar}`
-    document.getElementById("missleft").innerHTML = `Left Misses: ${msc-misscount}`
+    // *combo display
+    document.getElementById("combocounter").innerHTML = `x${comboVar}`;
+    // *misscout display
+    document.getElementById("missleft").innerHTML = `Misses Left: ${msc-misscount}`; 
+    // *max combo counting
+    if (maxcombo < comboVar) {
+        maxcombo = comboVar;
+    };
 }, 0);
 
 //* game over
@@ -104,4 +155,5 @@ function setTime() {
 setInterval (() => {
     localStorage.setItem("scoreLocalStorage", scoreVar);
     localStorage.setItem("secondsLocalStorage", totalSeconds);
+    localStorage.setItem("maxcomboLocalStorage", maxcombo)
 }, 0);

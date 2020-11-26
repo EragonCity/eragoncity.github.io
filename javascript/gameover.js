@@ -24,3 +24,8 @@ function pad(val) {
       return valString;
     };
 };
+
+//* main menu
+function menu () {
+  document.location.href = "index.html";
+};

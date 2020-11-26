@@ -28,10 +28,11 @@ setInterval (function() {
 },0);
 
 //* check box check
+document.getElementById("checkbox").checked = false;
 setInterval(() =>{
   var rndEvent = checkbox.checked;
   localStorage.setItem("rndEventLocalStorage", rndEvent)
-  // ! document.getElementById("wh").innerHTML = rndEvent;
+  //! document.getElementById("wh").innerHTML = typeof rndEvent;
 },0 );
 // * chowanie loga
 setTimeout(function(){

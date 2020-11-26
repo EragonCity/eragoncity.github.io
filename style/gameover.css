@@ -26,7 +26,7 @@ div#center {
     text-align: center;
 }
 
-button.menu {
+button#menu {
     background: #000000;
     border: #ffffff 3px solid;
     border-radius: 10px;
@@ -42,7 +42,7 @@ button.menu {
     font-family: "Brushield";
 }
 
-button.menu:hover {
+button#menu:hover {
     background-color: #ffffff;
     color: black;
     font-size: 28px;

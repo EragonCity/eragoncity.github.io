@@ -21,44 +21,6 @@ function menu () {
     document.location.href = "index.html";
 };
 
-//* random events
-var rnd = localStorage.getItem("rndEventLocalStorage");
-function rndD() {
-    if (rnd = true) {
-        setInterval(randomEvent,10000);
-    };
-};
-rndD();
-// ! document.getElementById("wh").innerHTML = rnd;
-function randomEvent() {
-    switch (Math.ceil(Math.random()*10)) {
-        case 1:    
-        case 2:    
-        case 3:  
-        case 4:
-            document.getElementById("button").style.borderRadius = "0px";
-            setTimeout(circle,5000);
-            break;
-        case 5:
-        case 6:
-            time = 200;
-            setTimeout(time_normal, 2000);
-            break;
-        case 7:
-        case 8:
-        case 9:
-        case 10:
-        default:
-            console.log("default");
-    };
-};
-function circle() {
-    document.getElementById("button").style.borderRadius = "500px";
-};
-function time_normal() {
-    time = time_set;
-};
-
 //* size apply
 document.getElementById("button").style.padding = size + "px";
 
@@ -125,8 +87,13 @@ setInterval (() => {
     };
     // *combo display
     document.getElementById("combocounter").innerHTML = `x${comboVar}`;
-    // *misscout display
-    document.getElementById("missleft").innerHTML = `Misses Left: ${msc-misscount}`; 
+    // *misscout displal
+    var mis = msc - misscount;
+    if (mis < 0) {
+        document.getElementById("missleft").innerHTML = `Misses Left: 0`; 
+    } else {
+        document.getElementById("missleft").innerHTML = `Misses Left: ${mis}`; 
+    };
     // *max combo counting
     if (maxcombo < comboVar) {
         maxcombo = comboVar;
@@ -144,10 +111,9 @@ setInterval (() => {
     };
 },0);
 
-//* score and time output
+//* time counting
 var totalSeconds = 0;
 setInterval(setTime, 1000);
-
 function setTime() {
     ++totalSeconds;
 };
@@ -157,3 +123,42 @@ setInterval (() => {
     localStorage.setItem("secondsLocalStorage", totalSeconds);
     localStorage.setItem("maxcomboLocalStorage", maxcombo)
 }, 0);
+/*
+//* random events
+var rnd = localStorage.getItem("rndEventLocalStorage");
+document.getElementById("wh").innerHTML = rnd;
+function rndD() {
+    if (rnd) {
+        setInterval(randomEvent,10000);
+    };
+};
+rndD();
+function randomEvent() {
+    switch (Math.ceil(Math.random()*10)) {
+        case 1:    
+        case 2:    
+        case 3:  
+        case 4:
+            document.getElementById("button").style.borderRadius = "0px";
+            setTimeout(circle,5000);
+            break;
+        case 5:
+        case 6:
+            time = 200;
+            setTimeout(time_normal, 2000);
+            break;
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+        default:
+            console.log("default");
+    };
+};
+function circle() {
+    document.getElementById("button").style.borderRadius = "500px";
+};
+function time_normal() {
+    time = time_set;
+};
+*/

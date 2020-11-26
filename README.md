@@ -7,7 +7,7 @@ Ripoff Project present his new fan-game based on popular game osu!
  - Combo counting
  - score counting
  - game over
- - random events(can't turn off in menu)(DISABLED)
+ - random events
  - hit and miss sounds
 
 ## Planned additions

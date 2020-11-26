@@ -123,13 +123,13 @@ setInterval (() => {
     localStorage.setItem("secondsLocalStorage", totalSeconds);
     localStorage.setItem("maxcomboLocalStorage", maxcombo)
 }, 0);
-/*
+
 //* random events
 var rnd = localStorage.getItem("rndEventLocalStorage");
 document.getElementById("wh").innerHTML = rnd;
 function rndD() {
-    if (rnd) {
-        setInterval(randomEvent,10000);
+    if (rnd === true) {
+        setInterval(randomEvent,100);
     };
 };
 rndD();
@@ -161,4 +161,3 @@ function circle() {
 function time_normal() {
     time = time_set;
 };
-*/

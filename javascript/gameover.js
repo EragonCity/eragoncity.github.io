@@ -1,12 +1,12 @@
 //* score display
 var score_get = localStorage.getItem("scoreLocalStorage");
 var score = Number(score_get);
-document.getElementById("score").innerHTML = `Your score: ${score}`
+document.getElementById("score").innerHTML = `Score: ${score}`
 
 //* max combo
 var maxcombo_get = localStorage.getItem("maxcomboLocalStorage");
 var maxcombo = Number(maxcombo_get);
-document.getElementById("combo").innerHTML = `Yor max combo: ${maxcombo}`
+document.getElementById("combo").innerHTML = `Max combo: ${maxcombo}`
 
 //* time spent
 var time_get = localStorage.getItem("secondsLocalStorage");

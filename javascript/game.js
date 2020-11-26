@@ -54,7 +54,7 @@ function randomPos() {
 
 //*score counting
 var scoreVar = 0;
-var comboVar = 0;
+var comboVar = 1;
 var notclick = setInterval(miss, time);
 var misscount = 0;
 var maxcombo = 0;
@@ -71,7 +71,7 @@ function addScore() {
 function miss() {
     scoreVar -= 50;
     misssound.play();
-    comboVar = 0;
+    comboVar = 1;
     randomPos();
     misscount++;
 };
@@ -86,7 +86,7 @@ setInterval (() => {
         document.getElementById("score").innerHTML = `-${zeroPad(scoreVarAbs, 10)}`;
     };
     // *combo display
-    document.getElementById("combocounter").innerHTML = `x${comboVar}`;
+    document.getElementById("combocounter").innerHTML = `x${comboVar-1}`;
     // *misscout displal
     var mis = msc - misscount;
     if (mis < 0) {
@@ -129,7 +129,7 @@ var rnd = localStorage.getItem("rndEventLocalStorage");
 document.getElementById("wh").innerHTML = rnd;
 function rndD() {
     if (rnd === true) {
-        setInterval(randomEvent,100);
+        setInterval(randomEvent,10000);
     };
 };
 rndD();

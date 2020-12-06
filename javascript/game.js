@@ -12,6 +12,7 @@ var time = Number(time_get);
 var size = Number(size_get)/2;
 var msc = Number(msc_get);
 var time_set = time;
+var size_set = size;
 
 //*debug
 //!document.getElementById("debug").innerHTML = `${time}ms<br>${size}px`;
@@ -136,21 +137,30 @@ rndD();
 function randomEvent() {
     switch (Math.ceil(Math.random()*10)) {
         case 1:    
-        case 2:    
-        case 3:  
-        case 4:
+        case 2:
             document.getElementById("button").style.borderRadius = "0px";
             setTimeout(circle,5000);
-            break;
-        case 5:
-        case 6:
+            break;  
+        case 3: 
             time = 200;
             setTimeout(time_normal, 2000);
+            break; 
+        case 4:
+        case 5:
+            time = time_set*2;
+            setTimeout(time_normal, 2000);
             break;
+        case 6:
         case 7:
+            size = size_set/2;
+            setTimeout(size_normal, 3000);
+            break;
         case 8:
         case 9:
         case 10:
+            size = size_set*2;
+            setTimeout(size_normal, 3000);
+            break;
         default:
             console.log("default");
     };
@@ -160,4 +170,7 @@ function circle() {
 };
 function time_normal() {
     time = time_set;
+};
+function size_normal() {
+    size = size_set;
 };

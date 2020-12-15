@@ -127,7 +127,7 @@ setInterval (() => {
 
 //* random events
 var rnd = localStorage.getItem("rndEventLocalStorage");
-document.getElementById("wh").innerHTML = rnd;
+// ? document.getElementById("wh").innerHTML = rnd;
 function rndD() {
     if (rnd === true) {
         setInterval(randomEvent,10000);
@@ -144,7 +144,7 @@ function randomEvent() {
         case 3: 
             time = 200;
             setTimeout(time_normal, 2000);
-            break; 
+            break;
         case 4:
         case 5:
             time = time_set*2;

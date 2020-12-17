@@ -1,6 +1,6 @@
-@font-face{ 
-	font-family: 'Brushield';	
-	src: url('../fonts/Brushield.woff') format('woff'),	      
+@font-face {
+    font-family: 'Brushield';
+    src: url('../fonts/Brushield.woff') format('woff'),
 }
 
 body {
@@ -14,7 +14,6 @@ div#position {
     top: 100px;
     left: 300px;
 }
-
 
 button#button {
     display: inline-block;
@@ -43,7 +42,6 @@ button.back {
 
 .back::before {
     content: 'x';
-    
     font-size: 30px;
 }
 
@@ -68,7 +66,7 @@ p {
 p#score {
     position: fixed;
     top: -35px;
-    right: 0;  
+    right: 0;
 }
 
 p#combocounter {

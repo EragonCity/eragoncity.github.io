@@ -17,15 +17,15 @@ secondsLabel.innerHTML = pad(time % 60);
 minutesLabel.innerHTML = pad(parseInt(time / 60));
 
 function pad(val) {
-    var valString = val + "";
-    if (valString.length < 2) {
-      return "0" + valString;
-    } else {
-      return valString;
-    };
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  };
 };
 
 //* main menu
-function menu () {
+function menu() {
   document.location.href = "index.html";
 };

@@ -9,7 +9,7 @@ var msc_get = localStorage.getItem("mscLocalStorage");
 
 //* string => number conversion
 var time = Number(time_get);
-var size = Number(size_get)/2;
+var size = Number(size_get) / 2;
 var msc = Number(msc_get);
 var time_set = time;
 var size_set = size;
@@ -18,21 +18,21 @@ var size_set = size;
 //!document.getElementById("debug").innerHTML = `${time}ms<br>${size}px`;
 
 //! back button
-function menu () {
+function menu() {
     document.location.href = "index.html";
 };
 
 //* size apply
 document.getElementById("button").style.padding = size + "px";
 
-setInterval (() => {
+setInterval(() => {
     var wWcalculation = window.innerWidth - 150;
     var wHcalculation = window.innerHeight - 150;
     document.getElementById('playarea').style.width = `${wWcalculation}px`;
     document.getElementById('playarea').style.height = `${wHcalculation}px`;
     document.getElementById('missarea').style.width = `${wWcalculation}px`;
     document.getElementById('missarea').style.height = `${wHcalculation}px`;
-    document.getElementById('button').style.borderWidth = `${size/5}px`;
+    document.getElementById('button').style.borderWidth = `${size / 5}px`;
     //*debug
     //!document.getElementById('wh').innerHTML = `Debug<br>Width: ${window.innerWidth}<br>Height: ${window.innerHeight}`;
 }, 0);
@@ -61,7 +61,7 @@ var misscount = 0;
 var maxcombo = 0;
 
 function addScore() {
-    scoreVar += 100*comboVar;
+    scoreVar += 100 * comboVar;
     comboVar++;
     randomPos();
     hitsound.play();
@@ -77,7 +77,7 @@ function miss() {
     misscount++;
 };
 // *constatant function for other calculations
-setInterval (() => {
+setInterval(() => {
     const zeroPad = (num, places) => String(num).padStart(places, '0')
     //*score padding and display
     if (scoreVar >= 0) {
@@ -87,13 +87,13 @@ setInterval (() => {
         document.getElementById("score").innerHTML = `-${zeroPad(scoreVarAbs, 10)}`;
     };
     // *combo display
-    document.getElementById("combocounter").innerHTML = `x${comboVar-1}`;
+    document.getElementById("combocounter").innerHTML = `x${comboVar - 1}`;
     // *misscout displal
     var mis = msc - misscount;
     if (mis < 0) {
-        document.getElementById("missleft").innerHTML = `Misses Left: 0`; 
+        document.getElementById("missleft").innerHTML = `Misses Left: 0`;
     } else {
-        document.getElementById("missleft").innerHTML = `Misses Left: ${mis}`; 
+        document.getElementById("missleft").innerHTML = `Misses Left: ${mis}`;
     };
     // *max combo counting
     if (maxcombo < comboVar) {
@@ -106,11 +106,11 @@ function gameOver() {
     document.location.href = "gameover.html";
 };
 
-setInterval (() => {
+setInterval(() => {
     if (misscount > msc) {
         gameOver();
     };
-},0);
+}, 0);
 
 //* time counting
 var totalSeconds = 0;
@@ -119,7 +119,7 @@ function setTime() {
     ++totalSeconds;
 };
 //* local storage output
-setInterval (() => {
+setInterval(() => {
     localStorage.setItem("scoreLocalStorage", scoreVar);
     localStorage.setItem("secondsLocalStorage", totalSeconds);
     localStorage.setItem("maxcomboLocalStorage", maxcombo)
@@ -130,35 +130,35 @@ var rnd = localStorage.getItem("rndEventLocalStorage");
 // ? document.getElementById("wh").innerHTML = rnd;
 function rndD() {
     if (rnd === true) {
-        setInterval(randomEvent,10000);
+        setInterval(randomEvent, 10000);
     };
 };
 rndD();
 function randomEvent() {
-    switch (Math.ceil(Math.random()*10)) {
-        case 1:    
+    switch (Math.ceil(Math.random() * 10)) {
+        case 1:
         case 2:
             document.getElementById("button").style.borderRadius = "0px";
-            setTimeout(circle,5000);
-            break;  
-        case 3: 
+            setTimeout(circle, 5000);
+            break;
+        case 3:
             time = 200;
             setTimeout(time_normal, 2000);
             break;
         case 4:
         case 5:
-            time = time_set*2;
+            time = time_set * 2;
             setTimeout(time_normal, 2000);
             break;
         case 6:
         case 7:
-            size = size_set/2;
+            size = size_set / 2;
             setTimeout(size_normal, 3000);
             break;
         case 8:
         case 9:
         case 10:
-            size = size_set*2;
+            size = size_set * 2;
             setTimeout(size_normal, 3000);
             break;
         default:

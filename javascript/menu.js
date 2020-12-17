@@ -3,10 +3,10 @@ var circle_size = document.getElementById("circle_size");
 var circle_size_output = document.getElementById("size");
 
 
-setInterval (function() {
+setInterval(function () {
   circle_size_output.innerHTML = circle_size.value + "px";
   localStorage.setItem("circle_sizeLocalStorage", circle_size.value);
-},0);
+}, 0);
 
 // * Czas na kliknięcie
 var time = document.getElementById("time");
@@ -22,29 +22,29 @@ setInterval(() => {
 var chances = document.getElementById("msc");
 var chances_output = document.getElementById("msco");
 
-setInterval (function() {
+setInterval(function () {
   chances_output.innerHTML = chances.value;
   localStorage.setItem("mscLocalStorage", chances.value);
-},0);
+}, 0);
 
 //* check box check
 document.getElementById("checkbox").checked = false;
-setInterval(() =>{
+setInterval(() => {
   var rndEvent = checkbox.checked;
   localStorage.setItem("rndEventLocalStorage", rndEvent)
   //! document.getElementById("wh").innerHTML = typeof rndEvent;
-},0 );
+}, 0);
 // * chowanie loga
-setTimeout(function(){
+setTimeout(function () {
   document.getElementById('bg').style.opacity = 0;
   document.getElementById('bg').style.visibility = "hidden";
   document.getElementById('menu').style.opacity = 1.0;
-},1000);
+}, 1000);
 
 function startGame() {
   document.location.href = "game.html";
 };
-/* ! debug 
+/* ! debug
 setInterval (() => {
   document.getElementById('wh').innerHTML = `Debug<br>Width: ${window.innerWidth}<br>Height: ${window.innerHeight}`;
 }, 0); */

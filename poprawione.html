@@ -1,0 +1,89 @@
+<html><head>
+	<style>
+		body {
+			background-color: #000000;
+		}
+		.button {
+  			background-color: #4CAF50; /* Green */
+  			border: none;
+ 			 color: white;
+  			padding: 15px 32px;
+  			text-align: center;
+  			text-decoration: none;
+  			display: inline-block;
+  			font-size: 60px;
+			height:300px;
+    			width:500px;
+        }
+		.input {
+			height:300px;
+    			width:500px;
+
+}
+	</style>
+</head>
+
+<body>
+	<div id="container" style=""><center>
+		<button id="generate_coupon" class="button" disabled="" style="background-color: salmon; color: white;">
+			Generuj kupon
+		</button></center>
+		<br>
+		<center><h1><span style="color:white"><div id="success_coupon_count">
+			Ilosc pomyslnie wygenerowanych kuponow: <span>0</span>
+		</div></span></h1><h1></h1></center>
+		<div id="status"><center><h2><span style="color:white">
+			Status generatora: </span><span style="color:lime">niezablokowany</span></h2></center>
+		</div>
+	</div>
+	<script>
+
+	const btn = document.getElementById('generate_coupon');
+	btn.addEventListener('click', function onClick() {
+	btn.style.backgroundColor = 'salmon';
+	btn.style.color = 'white';
+	document.getElementById("generate_coupon").disabled = true;
+	setTimeout(function(){
+    btn.style.backgroundColor = '#4CAF50';
+    btn.style.color = 'white';
+    document.getElementById("generate_coupon").disabled = false;
+  }, 60000);
+});
+
+function data_handler(ev) {
+  const button = document.getElementById('generate_coupon');
+  const count = document.querySelector('#success_coupon_count > span');
+  const status = document.querySelector('#status > span');
+  if (!ev.success) {
+    status.style.color = "red";
+    status.innerText = "zablokowany";
+    return button.setAttribute("disabled", "");
+  };
+  const iCount = parseInt(count.innerText) + 1;
+  count.innerText = iCount;
+  return cooldown_button(button, 60);
+};
+
+function click_handler() {
+  const request = window.bridge.message("offerActivation");
+  request.send({
+    loyaltyId: 2400,
+    autoActivate: false,
+    rewardId: 97983
+  });
+  request.on("data", data_handler)
+};
+
+function showPage(bridge) {
+  window.bridge = bridge;
+  document.getElementById("container").style.display = "block";
+  document.getElementById('generate_coupon').addEventListener("click", click_handler);
+};
+
+document.addEventListener('mcdBridgeReady', () => {
+  const { bridge } = window.mcd;
+  return showPage(bridge);
+});</script>
+
+
+</body></html>
